@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Створи власний кавовий мікс у Zerno.Mix: обирай пропорції, обсмаження та пакування."
+    />
+    <title>Zerno.Mix — створи свій кавовий мікс</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Перейти до основного змісту</a>
+    <div class="page-shell">
+      <header class="relative">
+        <div
+          class="flex min-h-[88px] items-center justify-between gap-4 md:gap-6"
+        >
+          <a
+            href="#top"
+            aria-label="Zerno.Mix — на початок сторінки"
+            class="inline-flex min-h-[44px] shrink-0 items-center rounded-lg focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[#3B2416]"
+          >
+            <img
+              src="assets/images/logo.svg"
+              alt="Zerno.Mix"
+              width="142"
+              height="40"
+              class="h-10 w-auto"
+            />
+          </a>
+
+          <nav aria-label="Головна навігація" class="hidden flex-1 md:block">
+            <ul
+              class="flex items-center justify-center gap-3 text-sm text-[#6B5446] lg:gap-6"
+            >
+              <li>
+                <a
+                  href="#mixer"
+                  class="inline-flex min-h-[44px] items-center rounded transition-colors duration-200 hover:text-[#8F4F12] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[#3B2416]"
+                  >Конструктор</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#catalog"
+                  class="inline-flex min-h-[44px] items-center rounded transition-colors duration-200 hover:text-[#8F4F12] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[#3B2416]"
+                  >Каталог</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="inline-flex min-h-[44px] items-center rounded transition-colors duration-200 hover:text-[#8F4F12] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[#3B2416]"
+                  >Про бренд</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <a
+            href="#mixer"
+            class="hidden min-h-[44px] shrink-0 items-center justify-center rounded-xl bg-[#C8752B] px-3 py-2 text-sm font-semibold whitespace-nowrap text-[#2A190E] transition duration-200 hover:brightness-110 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[#3B2416] lg:px-4 lg:text-base md:inline-flex"
+          >
+            Створити свій мікс
+          </a>
+
+          <details class="group relative md:hidden">
+            <summary
+              aria-label="Меню навігації"
+              class="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-xl text-[#3B2416] transition-colors duration-200 hover:bg-[#3B2416]/10 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-[#3B2416] [&::-webkit-details-marker]:hidden"
+            >
+              <svg
+                class="h-6 w-6 group-open:hidden"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              </svg>
+              <svg
+                class="hidden h-6 w-6 group-open:block"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M6 6l12 12M18 6L6 18" />
+              </svg>
+            </summary>
+            <nav
+              aria-label="Мобільна навігація"
+              class="absolute right-0 top-full z-10 mt-2 w-[min(20rem,calc(100vw-2rem))] rounded-[20px] border border-[#6B5446]/25 bg-[#F5EBDD] p-4 shadow-[0_4px_16px_rgba(59,36,22,0.12)]"
+            >
+              <ul class="flex flex-col gap-1">
+                <li>
+                  <a
+                    href="#mixer"
+                    class="flex min-h-[48px] items-center rounded-lg px-3 text-base transition-colors hover:bg-[#3B2416]/10 hover:text-[#8F4F12] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[#3B2416]"
+                    >Конструктор</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#catalog"
+                    class="flex min-h-[48px] items-center rounded-lg px-3 text-base transition-colors hover:bg-[#3B2416]/10 hover:text-[#8F4F12] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[#3B2416]"
+                    >Каталог</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#about"
+                    class="flex min-h-[48px] items-center rounded-lg px-3 text-base transition-colors hover:bg-[#3B2416]/10 hover:text-[#8F4F12] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[#3B2416]"
+                    >Про бренд</a
+                  >
+                </li>
+              </ul>
+              <a
+                href="#mixer"
+                class="mt-3 flex min-h-[48px] items-center justify-center rounded-xl bg-[#C8752B] px-4 py-3 text-base font-semibold text-[#2A190E] transition duration-200 hover:brightness-110 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-[#3B2416]"
+                >Створити свій мікс</a
+              >
+            </nav>
+          </details>
+        </div>
+      </header>
+
+      <main id="main-content">
+        <section class="hero" id="top" aria-labelledby="hero-title">
+          <div class="hero-content">
+            <p class="eyebrow">Кава, створена саме для тебе</p>
+            <h1 id="hero-title">
+              Створи свій ідеальний кавовий мікс за власним рецептом
+            </h1>
+            <p class="hero-description">
+              Налаштовуй пропорції сортів, обирай ступінь обсмаження та отримуй
+              свіжу крафтову каву з верифікованим походженням прямо до дверей.
+            </p>
+            <div class="button-row">
+              <a class="button" href="#mixer">Створити свій мікс</a>
+              <a class="button button-outline" href="#catalog"
+                >Переглянути готові мікси</a
+              >
+            </div>
+          </div>
+          <div class="hero-visual">
+            <picture>
+              <source srcset="assets/images/hero_bg.webp" type="image/webp" />
+              <img
+                src="assets/images/hero_bg.png"
+                alt="Кавові зерна для створення власного міксу"
+                width="1820"
+                height="1024"
+                class="md:max-lg:!aspect-[2/1] md:max-lg:object-cover"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+        </section>
+
+        <section
+          class="content-section"
+          id="benefits"
+          aria-labelledby="benefits-title"
+        >
+          <header id="about" class="section-heading">
+            <p class="eyebrow">Твій смак — твої правила</p>
+            <h2 id="benefits-title">Чому Zerno.Mix</h2>
+            <p>
+              Зазвичай купівля кави наосліп — це ризик отримати не той смак. Ми
+              створили Zerno.Mix, щоб повернути вам повний контроль над кожною
+              чашкою.
+            </p>
+          </header>
+          <div class="benefit-grid">
+            <article class="benefit-card">
+              <img
+                src="assets/icons/icon-personalization.svg"
+                alt=""
+                aria-hidden="true"
+                width="48"
+                height="48"
+                loading="lazy"
+              />
+              <h3>Персоналізація</h3>
+              <p>Створи поєднання смаків і міцності під власні вподобання.</p>
+            </article>
+            <article class="benefit-card">
+              <img
+                src="assets/icons/icon-origin.svg"
+                alt=""
+                aria-hidden="true"
+                width="48"
+                height="48"
+                loading="lazy"
+              />
+              <h3>Прозорість походження</h3>
+              <p>Дізнавайся про походження зерна та склад свого міксу.</p>
+            </article>
+            <article class="benefit-card">
+              <img
+                src="assets/icons/icon-subscription.svg"
+                alt=""
+                aria-hidden="true"
+                width="48"
+                height="48"
+                loading="lazy"
+              />
+              <h3>Гнучка підписка</h3>
+              <p>Обирай разове замовлення або регулярну доставку.</p>
+            </article>
+            <article class="benefit-card">
+              <img
+                src="assets/icons/icon-eco.svg"
+                alt=""
+                aria-hidden="true"
+                width="48"
+                height="48"
+                loading="lazy"
+              />
+              <h3>Екологічність</h3>
+              <p>Обирай пакування для свого замовлення.</p>
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="content-section mixer-section"
+          id="mixer"
+          aria-labelledby="mixer-title"
+        >
+          <div class="mixer-copy">
+            <p class="eyebrow">Твій рецепт</p>
+            <h2 id="mixer-title">Створи свій мікс за 5 хвилин</h2>
+            <p>
+              Налаштуй основу свого рецепта. Цей конструктор — попередній
+              перегляд; оформлення замовлення з’явиться незабаром.
+            </p>
+            <div class="mixer-form">
+              <div class="slider-field">
+                <label for="blend">Співвідношення зерен</label>
+                <input
+                  id="blend"
+                  name="blend"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="50"
+                  class="min-h-[44px] cursor-pointer"
+                />
+              </div>
+              <div class="slider-field">
+                <label for="roast">Ступінь обсмаження</label>
+                <input
+                  id="roast"
+                  name="roast"
+                  type="range"
+                  min="1"
+                  max="5"
+                  value="3"
+                  class="min-h-[44px] cursor-pointer"
+                />
+              </div>
+              <div class="slider-field">
+                <label for="packaging">Дизайн пакування</label>
+                <input
+                  id="packaging"
+                  name="packaging"
+                  type="range"
+                  min="1"
+                  max="3"
+                  value="2"
+                  class="min-h-[44px] cursor-pointer"
+                />
+              </div>
+              <fieldset
+                id="subscription"
+                class="flex min-w-0 flex-wrap gap-3 border-0 p-0"
+              >
+                <legend class="field-title mb-2">Формат замовлення</legend>
+                <label
+                  class="flavor-tag min-h-[44px] !rounded-full cursor-pointer"
+                >
+                  <input
+                    type="radio"
+                    name="purchase-type"
+                    value="once"
+                    checked
+                  />
+                  Разове замовлення
+                </label>
+                <label
+                  class="flavor-tag min-h-[44px] !rounded-full cursor-pointer"
+                >
+                  <input
+                    type="radio"
+                    name="purchase-type"
+                    value="subscription"
+                  />
+                  Підписка
+                </label>
+              </fieldset>
+              <a class="button" href="#contact">Написати нам</a>
+            </div>
+          </div>
+          <div class="mixer-image-wrap">
+            <img
+              class="mixer-image"
+              loading="lazy"
+              src="assets/images/hero_bg.png"
+              alt="Кавові зерна для створення власного міксу"
+              width="1820"
+              height="1024"
+            />
+          </div>
+        </section>
+
+        <section
+          id="catalog"
+          aria-labelledby="catalog-title"
+          class="content-section text-[#3B2416]"
+        >
+          <header class="section-heading">
+            <p class="eyebrow">Знайомство з каталогом</p>
+            <h2 id="catalog-title">Готові мікси</h2>
+            <p>Усі мікси — 250 г.</p>
+          </header>
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <article
+              class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
+            >
+              <p class="eyebrow">Готовий мікс</p>
+              <h3 class="text-2xl">Ранковий удар</h3>
+              <p class="text-sm text-[#6B5446]">
+                Насичений мікс з нотами шоколаду та горіхів.
+              </p>
+              <p class="text-sm text-[#6B5446]">250 г · Середнє обсмаження</p>
+              <p class="text-sm font-bold">250 грн</p>
+              <a
+                class="button mt-auto"
+                href="#mixer"
+                aria-label="Зібрати схожий мікс: Ранковий удар"
+                >Зібрати схожий мікс</a
+              >
+            </article>
+            <article
+              class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
+            >
+              <p class="eyebrow">Готовий мікс</p>
+              <h3 class="text-2xl">Вечірній спокій</h3>
+              <p class="text-sm text-[#6B5446]">
+                М'який збалансований мікс з нотами карамелі.
+              </p>
+              <p class="text-sm text-[#6B5446]">250 г · Помірне обсмаження</p>
+              <p class="text-sm font-bold">260 грн</p>
+              <a
+                class="button mt-auto"
+                href="#mixer"
+                aria-label="Зібрати схожий мікс: Вечірній спокій"
+                >Зібрати схожий мікс</a
+              >
+            </article>
+            <article
+              class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
+            >
+              <p class="eyebrow">Готовий мікс</p>
+              <h3 class="text-2xl">Цитрусовий сад</h3>
+              <p class="text-sm text-[#6B5446]">
+                Світлий мікс зі свіжою кислинкою цитрусових.
+              </p>
+              <p class="text-sm text-[#6B5446]">250 г · Світле обсмаження</p>
+              <p class="text-sm font-bold">270 грн</p>
+              <a
+                class="button mt-auto"
+                href="#mixer"
+                aria-label="Зібрати схожий мікс: Цитрусовий сад"
+                >Зібрати схожий мікс</a
+              >
+            </article>
+            <article
+              class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
+            >
+              <p class="eyebrow">Готовий мікс</p>
+              <h3 class="text-2xl">Лісова ягода</h3>
+              <p class="text-sm text-[#6B5446]">
+                Фруктовий мікс з ягідною солодкістю.
+              </p>
+              <p class="text-sm text-[#6B5446]">250 г · Світле обсмаження</p>
+              <p class="text-sm font-bold">280 грн</p>
+              <a
+                class="button mt-auto"
+                href="#mixer"
+                aria-label="Зібрати схожий мікс: Лісова ягода"
+                >Зібрати схожий мікс</a
+              >
+            </article>
+            <article
+              class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
+            >
+              <p class="eyebrow">Готовий мікс</p>
+              <h3 class="text-2xl">Горіхова карамель</h3>
+              <p class="text-sm text-[#6B5446]">
+                Солодкий мікс з горіховим післясмаком.
+              </p>
+              <p class="text-sm text-[#6B5446]">250 г · Середнє обсмаження</p>
+              <p class="text-sm font-bold">255 грн</p>
+              <a
+                class="button mt-auto"
+                href="#mixer"
+                aria-label="Зібрати схожий мікс: Горіхова карамель"
+                >Зібрати схожий мікс</a
+              >
+            </article>
+            <article
+              class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
+            >
+              <p class="eyebrow">Готовий мікс</p>
+              <h3 class="text-2xl">Темний шоколад</h3>
+              <p class="text-sm text-[#6B5446]">
+                Глибокий мікс з нотами гіркого шоколаду.
+              </p>
+              <p class="text-sm text-[#6B5446]">250 г · Темне обсмаження</p>
+              <p class="text-sm font-bold">265 грн</p>
+              <a
+                class="button mt-auto"
+                href="#mixer"
+                aria-label="Зібрати схожий мікс: Темний шоколад"
+                >Зібрати схожий мікс</a
+              >
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="content-section border-t border-[#6B5446]/25"
+          id="media"
+          aria-labelledby="media-title"
+        >
+          <header class="section-heading">
+            <p class="eyebrow">Знайомство з брендом</p>
+            <h2 id="media-title">Подивімося на каву по-новому</h2>
+          </header>
+          <!-- MEDIA: YouTube video -->
+          <figure class="w-full">
+            <div
+              class="aspect-video w-full max-w-3xl mx-auto overflow-hidden rounded-[20px] shadow-lg"
+            >
+              <iframe
+                class="block h-full w-full border-0"
+                src="https://www.youtube.com/embed/87eb45AYeBE?si=PgJJ97bXBKBf7gjo"
+                title="Відео про каву"
+                loading="lazy"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <figcaption class="mt-3 text-center">
+              Від зеленого зерна до обсмаженої кави
+            </figcaption>
+          </figure>
+        </section>
+
+        <section
+          class="content-section reviews-section"
+          id="reviews"
+          aria-labelledby="reviews-title"
+        >
+          <header class="section-heading">
+            <p class="eyebrow">Досвід спільноти</p>
+            <h2 id="reviews-title">Відгуки</h2>
+          </header>
+          <div class="review-grid">
+            <article class="review-card">
+              <div class="review-stars" role="img" aria-label="5 з 5 зірок">
+                ★★★★★
+              </div>
+              <h3 class="mb-3 text-xl">Марія К.</h3>
+              <p>
+                «Нарешті знайшла свій смак. Зібрати мікс було легко, а кава
+                приїхала дуже свіжою.»
+              </p>
+            </article>
+            <article class="review-card">
+              <div class="review-stars" role="img" aria-label="5 з 5 зірок">
+                ★★★★★
+              </div>
+              <h3 class="mb-3 text-xl">Андрій Л.</h3>
+              <p>
+                «Зручно, що можна експериментувати з нотами та замовляти у
+                своєму темпі.»
+              </p>
+            </article>
+            <article class="review-card">
+              <div class="review-stars" role="img" aria-label="5 з 5 зірок">
+                ★★★★★
+              </div>
+              <h3 class="mb-3 text-xl">Олена П.</h3>
+              <p>
+                «Відкрив для себе цікаві поєднання. Тепер ранкова кава стала
+                маленьким ритуалом.»
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="content-section contact-section"
+          id="contact"
+          aria-labelledby="contact-title"
+        >
+          <div class="contact-intro">
+            <p class="eyebrow">Ми на зв’язку</p>
+            <h2 id="contact-title">Є запитання?</h2>
+            <p>
+              Напиши нам — допоможемо з вибором міксу, замовленням чи підпискою.
+            </p>
+          </div>
+          <div class="grid gap-10">
+            <form class="contact-form">
+              <label for="topic">Тема</label>
+              <input
+                id="topic"
+                name="topic"
+                type="text"
+                placeholder="Наприклад, питання про замовлення"
+                class="!rounded-xl"
+                required
+              />
+
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="name@example.com"
+                autocomplete="email"
+                class="!rounded-xl"
+                required
+              />
+
+              <label for="message">Повідомлення</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Напиши своє питання"
+                class="!rounded-xl"
+                required
+              ></textarea>
+
+              <p id="form-note" class="text-xs text-[#6B5446]">
+                Надсилання повідомлень стане доступним після підключення форми.
+              </p>
+              <button
+                class="button cursor-not-allowed opacity-70"
+                type="button"
+                aria-describedby="form-note"
+                disabled
+              >
+                Надіслати повідомлення
+              </button>
+            </form>
+
+            <!-- MEDIA: Google Maps -->
+            <figure class="w-full">
+              <div
+                class="aspect-square w-full overflow-hidden rounded-[20px] sm:aspect-video"
+              >
+                <iframe
+                  class="block h-full w-full border-0"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2574.729144423771!2d24.001288799999994!3d49.8099596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ae718e7ba5db1%3A0x379374cdfd80f53a!2z0JfQtdGA0L3Qvg!5e0!3m2!1suk!2sua!4v1793654463283!5m2!1suk!2sua"
+                  title="Мапа розташування Zerno.Mix"
+                  allowfullscreen
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                ></iframe>
+              </div>
+              <figcaption class="mt-3 text-center">
+                Мапа розташування
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="cta-banner" aria-labelledby="cta-title">
+          <div>
+            <p class="eyebrow">Твій наступний улюблений смак</p>
+            <h2 id="cta-title">Твоя кава. Твій склад.</h2>
+          </div>
+          <a class="button button-light" href="#mixer">Створити свій мікс</a>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-brand-column">
+          <a
+            href="#top"
+            aria-label="Zerno.Mix — на початок сторінки"
+            class="brand rounded-lg focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[#F5EBDD]"
+          >
+            <img
+              src="assets/images/logo.svg"
+              alt="Zerno.Mix"
+              width="142"
+              height="40"
+              loading="lazy"
+            />
+          </a>
+          <p>Кава, створена за твоїм рецептом.</p>
+        </div>
+
+        <nav class="footer-column" aria-label="Навігація у підвалі">
+          <h2>Навігація</h2>
+          <a href="#mixer">Конструктор</a>
+          <a href="#catalog">Каталог</a>
+          <a href="#about">Про бренд</a>
+        </nav>
+
+        <nav class="footer-column" aria-label="Підтримка">
+          <h2>Підтримка</h2>
+          <a href="#contact">Поставити запитання</a>
+          <a href="#contact">Запитати про доставку</a>
+        </nav>
+
+        <div class="footer-column">
+          <h2>Контакти</h2>
+          <a href="#contact">Написати нам</a>
+          <p class="mb-0">Соцмережі з’являться незабаром.</p>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; Zerno.Mix</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
