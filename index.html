@@ -534,7 +534,8 @@
             <p class="eyebrow">Ми на зв’язку</p>
             <h2 id="contact-title">Є запитання?</h2>
             <p>
-              Напиши нам — допоможемо з вибором міксу, замовленням чи підпискою.
+              Напиши нам — допоможемо з вибором міксу, замовленням чи підпискою
+              швидко.
             </p>
           </div>
           <div class="grid gap-10">
@@ -544,7 +545,11 @@
               novalidate
             >
               <div class="space-y-2">
-                <label for="username" class="block text-sm !font-semibold text-[#3B2416]">Ім’я</label>
+                <label
+                  for="username"
+                  class="block text-sm !font-semibold text-[#3B2416]"
+                  >Ім’я</label
+                >
                 <input
                   type="text"
                   id="username"
@@ -555,11 +560,19 @@
                   aria-invalid="false"
                   class="min-h-[44px] w-full !rounded-xl !border-[#6B5446] !bg-white !px-3 !py-2 transition duration-200 hover:!border-[#8F4F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12]"
                 />
-                <p id="nameError" class="hidden text-sm text-[#B3261E]" role="alert"></p>
+                <p
+                  id="nameError"
+                  class="hidden text-sm text-[#B3261E]"
+                  role="alert"
+                ></p>
               </div>
 
               <div class="space-y-2">
-                <label for="email" class="block text-sm !font-semibold text-[#3B2416]">Електронна пошта</label>
+                <label
+                  for="email"
+                  class="block text-sm !font-semibold text-[#3B2416]"
+                  >Електронна пошта</label
+                >
                 <input
                   type="email"
                   id="email"
@@ -570,11 +583,19 @@
                   aria-invalid="false"
                   class="min-h-[44px] w-full !rounded-xl !border-[#6B5446] !bg-white !px-3 !py-2 transition duration-200 hover:!border-[#8F4F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12]"
                 />
-                <p id="emailError" class="hidden text-sm text-[#B3261E]" role="alert"></p>
+                <p
+                  id="emailError"
+                  class="hidden text-sm text-[#B3261E]"
+                  role="alert"
+                ></p>
               </div>
 
               <div class="space-y-2">
-                <label for="phone" class="block text-sm !font-semibold text-[#3B2416]">Телефон</label>
+                <label
+                  for="phone"
+                  class="block text-sm !font-semibold text-[#3B2416]"
+                  >Телефон</label
+                >
                 <input
                   type="tel"
                   id="phone"
@@ -586,12 +607,22 @@
                   aria-invalid="false"
                   class="min-h-[44px] w-full !rounded-xl !border-[#6B5446] !bg-white !px-3 !py-2 transition duration-200 hover:!border-[#8F4F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12]"
                 />
-                <p id="phoneHint" class="text-sm text-[#6B5446]">Формат: +380XXXXXXXXX</p>
-                <p id="phoneError" class="hidden text-sm text-[#B3261E]" role="alert"></p>
+                <p id="phoneHint" class="text-sm text-[#6B5446]">
+                  Формат: +380XXXXXXXXX
+                </p>
+                <p
+                  id="phoneError"
+                  class="hidden text-sm text-[#B3261E]"
+                  role="alert"
+                ></p>
               </div>
 
               <div class="space-y-2 md:col-span-2">
-                <label for="message" class="block text-sm !font-semibold text-[#3B2416]">Повідомлення</label>
+                <label
+                  for="message"
+                  class="block text-sm !font-semibold text-[#3B2416]"
+                  >Повідомлення</label
+                >
                 <textarea
                   id="message"
                   name="message"
@@ -601,7 +632,11 @@
                   aria-invalid="false"
                   class="min-h-[44px] w-full !rounded-xl !border-[#6B5446] !bg-white !px-3 !py-2 transition duration-200 hover:!border-[#8F4F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12]"
                 ></textarea>
-                <p id="messageError" class="hidden text-sm text-[#B3261E]" role="alert"></p>
+                <p
+                  id="messageError"
+                  class="hidden text-sm text-[#B3261E]"
+                  role="alert"
+                ></p>
               </div>
 
               <div class="flex flex-wrap items-center gap-3 md:col-span-2">
@@ -614,14 +649,24 @@
                   aria-invalid="false"
                   class="!size-6 !shrink-0 !p-0 accent-[#8F4F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12]"
                 />
-                <label for="agreement" class="!mt-0 flex min-h-[44px] items-center text-sm !font-semibold text-[#3B2416]">Погоджуюсь з політикою конфіденційності</label>
-                <p id="agreementError" class="hidden w-full text-sm text-[#B3261E]" role="alert"></p>
+                <label
+                  for="agreement"
+                  class="!mt-0 flex min-h-[44px] items-center text-sm !font-semibold text-[#3B2416]"
+                  >Погоджуюсь з політикою конфіденційності</label
+                >
+                <p
+                  id="agreementError"
+                  class="hidden w-full text-sm text-[#B3261E]"
+                  role="alert"
+                ></p>
               </div>
 
               <button
                 type="submit"
                 class="min-h-[44px] w-full rounded-xl bg-[#C8752B] px-5 py-3 font-semibold text-[#2A190E] transition duration-200 hover:brightness-110 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12] md:w-auto md:col-span-2"
-              >Надіслати</button>
+              >
+                Надіслати
+              </button>
             </form>
 
             <!-- MEDIA: Google Maps -->
@@ -712,7 +757,8 @@
           Дякуємо!
         </h2>
         <p id="modalText" class="mt-3 text-[#2A190E]">
-          Форма успішно пройшла клієнтську валідацію. Демонстрація успішного надсилання.
+          Форма успішно пройшла клієнтську валідацію. Демонстрація успішного
+          надсилання.
         </p>
         <button
           id="closeModalBtn"
