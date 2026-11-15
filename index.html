@@ -14,6 +14,14 @@
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -146,8 +154,16 @@
               Створи свій ідеальний кавовий мікс за власним рецептом
             </h1>
             <p class="hero-description">
-              Налаштовуй пропорції сортів, обирай ступінь обсмаження та отримуй
-              свіжу крафтову каву з верифікованим походженням прямо до дверей.
+              <span id="typed-text" aria-live="off" class="text-[#F2B36D]"
+                >Налаштовуй пропорції сортів, обирай ступінь обсмаження та
+                отримуй свіжу крафтову каву з верифікованим походженням прямо до
+                дверей.</span
+              >
+              <noscript>
+                Налаштовуй пропорції сортів, обирай ступінь обсмаження та
+                отримуй свіжу крафтову каву з верифікованим походженням прямо до
+                дверей.
+              </noscript>
             </p>
             <div class="button-row">
               <a class="button" href="#mixer">Створити свій мікс</a>
@@ -338,7 +354,9 @@
             <h2 id="catalog-title">Готові мікси</h2>
             <p>Усі мікси — 250 г.</p>
           </header>
-          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="swiper mixes-swiper min-w-0">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide h-auto">
             <article
               class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
             >
@@ -356,6 +374,8 @@
                 >Зібрати схожий мікс</a
               >
             </article>
+              </div>
+              <div class="swiper-slide h-auto">
             <article
               class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
             >
@@ -373,6 +393,8 @@
                 >Зібрати схожий мікс</a
               >
             </article>
+              </div>
+              <div class="swiper-slide h-auto">
             <article
               class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
             >
@@ -390,6 +412,8 @@
                 >Зібрати схожий мікс</a
               >
             </article>
+              </div>
+              <div class="swiper-slide h-auto">
             <article
               class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
             >
@@ -407,6 +431,8 @@
                 >Зібрати схожий мікс</a
               >
             </article>
+              </div>
+              <div class="swiper-slide h-auto">
             <article
               class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
             >
@@ -424,6 +450,8 @@
                 >Зібрати схожий мікс</a
               >
             </article>
+              </div>
+              <div class="swiper-slide h-auto">
             <article
               class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
             >
@@ -441,6 +469,110 @@
                 >Зібрати схожий мікс</a
               >
             </article>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 flex flex-col items-center gap-2">
+            <div
+              class="mixes-pagination flex items-center justify-center"
+              aria-label="Пагінація готових міксів"
+            ></div>
+            <div class="flex w-full items-center justify-between">
+              <button
+                class="mixes-prev flex min-h-11 min-w-11 items-center justify-center rounded-full text-[#8F4F12] transition-colors hover:bg-[#8F4F12]/10 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-[#3B2416]"
+                type="button"
+                aria-label="Попередній мікс"
+              >
+                <svg
+                  class="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m15 18-6-6 6-6" />
+                </svg>
+              </button>
+              <button
+                class="mixes-next flex min-h-11 min-w-11 items-center justify-center rounded-full text-[#8F4F12] transition-colors hover:bg-[#8F4F12]/10 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-[#3B2416]"
+                type="button"
+                aria-label="Наступний мікс"
+              >
+                <svg
+                  class="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="content-section"
+          id="gallery"
+          aria-labelledby="gallery-title"
+        >
+          <header class="section-heading">
+            <p class="eyebrow">Атмосфера Zerno.Mix</p>
+            <h2 id="gallery-title">Наша галерея</h2>
+          </header>
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <a
+              href="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200&auto=format&fit=crop"
+              data-fancybox="coffee-gallery"
+              data-caption="Головний зал"
+              class="block overflow-hidden rounded-[20px] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[#3B2416]"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500&auto=format&fit=crop"
+                alt="Головний зал кав’ярні"
+                loading="lazy"
+                width="500"
+                height="400"
+                class="h-64 w-full cursor-zoom-in rounded-[20px] object-cover transition-transform duration-300 hover:scale-105"
+              />
+            </a>
+            <a
+              href="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&auto=format&fit=crop"
+              data-fancybox="coffee-gallery"
+              data-caption="Кава в чашці"
+              class="block overflow-hidden rounded-[20px] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[#3B2416]"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&auto=format&fit=crop"
+                alt="Кава в чашці"
+                loading="lazy"
+                width="500"
+                height="400"
+                class="h-64 w-full cursor-zoom-in rounded-[20px] object-cover transition-transform duration-300 hover:scale-105"
+              />
+            </a>
+            <a
+              href="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1200&auto=format&fit=crop"
+              data-fancybox="coffee-gallery"
+              data-caption="Кавові зерна"
+              class="block overflow-hidden rounded-[20px] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[#3B2416]"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=500&auto=format&fit=crop"
+                alt="Кавові зерна"
+                loading="lazy"
+                width="500"
+                height="400"
+                class="h-64 w-full cursor-zoom-in rounded-[20px] object-cover transition-transform duration-300 hover:scale-105"
+              />
+            </a>
           </div>
         </section>
 
@@ -770,5 +902,9 @@
       </div>
     </div>
     <script src="assets/js/validation.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="assets/js/plugins.js" defer></script>
   </body>
 </html>
