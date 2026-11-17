@@ -577,6 +577,193 @@
         </section>
 
         <section
+          class="content-section"
+          id="mix-builder"
+          aria-labelledby="mix-builder-title"
+        >
+          <header class="section-heading">
+            <p class="eyebrow">Твій смак — твої правила</p>
+            <h2 id="mix-builder-title">Конструктор кавового міксу</h2>
+          </header>
+
+          <div class="grid min-w-0 grid-cols-1 items-start gap-6 md:grid-cols-2">
+            <div
+              class="grid min-w-0 gap-5 rounded-[20px] border border-[#6B5446]/25 bg-white p-5 shadow-lg sm:p-6"
+            >
+              <div class="grid gap-5 sm:grid-cols-2">
+                <div class="grid gap-2">
+                  <label
+                    for="coffee-weight"
+                    class="flex min-h-[44px] items-center text-sm font-semibold text-[#3B2416]"
+                    >Вага пачки</label
+                  >
+                  <select
+                    id="coffee-weight"
+                    name="coffee-weight"
+                    class="min-h-[44px] w-full min-w-0 rounded-xl border border-[#6B5446] bg-white px-3 py-2 text-[#3B2416] transition duration-200 hover:border-[#8F4F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12]"
+                  >
+                    <option value="250">250 г</option>
+                    <option value="500">500 г</option>
+                    <option value="1000">1000 г</option>
+                  </select>
+                </div>
+
+                <div class="grid gap-2">
+                  <label
+                    for="coffee-qty"
+                    class="flex min-h-[44px] items-center text-sm font-semibold text-[#3B2416]"
+                    >Кількість пачок</label
+                  >
+                  <input
+                    type="number"
+                    id="coffee-qty"
+                    name="coffee-qty"
+                    min="1"
+                    max="20"
+                    value="1"
+                    required
+                    inputmode="numeric"
+                    aria-describedby="error-qty"
+                    class="min-h-[44px] w-full min-w-0 rounded-xl border border-[#6B5446] bg-white px-3 py-2 text-[#3B2416] transition duration-200 hover:border-[#8F4F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12]"
+                  />
+                  <p
+                    id="error-qty"
+                    class="hidden text-sm text-[#B3261E]"
+                    aria-live="polite"
+                  ></p>
+                </div>
+              </div>
+
+              <fieldset class="grid gap-2">
+                <legend
+                  class="flex min-h-[44px] items-center text-sm font-semibold text-[#3B2416]"
+                >
+                  Ступінь обсмаження
+                </legend>
+                <div class="grid gap-2 sm:grid-cols-3">
+                  <label
+                    for="roast-light"
+                    class="flex min-h-[44px] min-w-0 items-center gap-2 rounded-xl border border-[#6B5446]/25 px-3 py-2 text-sm text-[#3B2416] transition hover:border-[#8F4F12]"
+                  >
+                    <input
+                      type="radio"
+                      id="roast-light"
+                      name="roast"
+                      value="light"
+                      class="size-5 shrink-0 accent-[#8F4F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12]"
+                    />
+                    Світле
+                  </label>
+                  <label
+                    for="roast-medium"
+                    class="flex min-h-[44px] min-w-0 items-center gap-2 rounded-xl border border-[#6B5446]/25 px-3 py-2 text-sm text-[#3B2416] transition hover:border-[#8F4F12]"
+                  >
+                    <input
+                      type="radio"
+                      id="roast-medium"
+                      name="roast"
+                      value="medium"
+                      checked
+                      class="size-5 shrink-0 accent-[#8F4F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12]"
+                    />
+                    Середнє
+                  </label>
+                  <label
+                    for="roast-dark"
+                    class="flex min-h-[44px] min-w-0 items-center gap-2 rounded-xl border border-[#6B5446]/25 px-3 py-2 text-sm text-[#3B2416] transition hover:border-[#8F4F12]"
+                  >
+                    <input
+                      type="radio"
+                      id="roast-dark"
+                      name="roast"
+                      value="dark"
+                      class="size-5 shrink-0 accent-[#8F4F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12]"
+                    />
+                    Темне
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="grid gap-2">
+                <label
+                  for="coffee-grind"
+                  class="flex min-h-[44px] items-center text-sm font-semibold text-[#3B2416]"
+                  >Помел</label
+                >
+                <select
+                  id="coffee-grind"
+                  name="coffee-grind"
+                  class="min-h-[44px] w-full min-w-0 rounded-xl border border-[#6B5446] bg-white px-3 py-2 text-[#3B2416] transition duration-200 hover:border-[#8F4F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12]"
+                >
+                  <option value="beans">Зерна</option>
+                  <option value="filter">Фільтр</option>
+                  <option value="espresso">Еспресо</option>
+                  <option value="turka">Турка</option>
+                </select>
+              </div>
+
+              <fieldset class="grid gap-2">
+                <legend
+                  class="flex min-h-[44px] items-center text-sm font-semibold text-[#3B2416]"
+                >
+                  Додатки
+                </legend>
+                <div class="grid gap-2 sm:grid-cols-2">
+                  <label
+                    for="addon-aroma"
+                    class="flex min-h-[44px] min-w-0 items-center gap-3 rounded-xl border border-[#6B5446]/25 px-3 py-2 text-sm text-[#3B2416] transition hover:border-[#8F4F12]"
+                  >
+                    <input
+                      type="checkbox"
+                      id="addon-aroma"
+                      name="addon-aroma"
+                      class="size-5 shrink-0 accent-[#8F4F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12]"
+                    />
+                    <span>Ароматизатор, +30 грн за пачку</span>
+                  </label>
+                  <label
+                    for="addon-gift"
+                    class="flex min-h-[44px] min-w-0 items-center gap-3 rounded-xl border border-[#6B5446]/25 px-3 py-2 text-sm text-[#3B2416] transition hover:border-[#8F4F12]"
+                  >
+                    <input
+                      type="checkbox"
+                      id="addon-gift"
+                      name="addon-gift"
+                      class="size-5 shrink-0 accent-[#8F4F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12]"
+                    />
+                    <span>Подарункове пакування, +50 грн за замовлення</span>
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <aside
+              class="grid min-w-0 content-start gap-5 rounded-[20px] border border-[#6B5446]/25 bg-[#F7F1E8] p-5 shadow-lg sm:p-6"
+              aria-label="Результат розрахунку"
+            >
+              <p
+                id="summary"
+                class="border-b border-[#6B5446]/25 pb-4 text-base font-semibold text-[#3B2416]"
+              >
+                Підсумок замовлення
+              </p>
+              <p
+                id="total-price"
+                class="break-words text-4xl font-semibold text-[#8F4F12] sm:text-5xl"
+              >
+                —
+              </p>
+              <div>
+                <h3 class="mb-3 text-sm font-semibold text-[#3B2416]">
+                  Розбивка вартості
+                </h3>
+                <div id="breakdown" class="grid gap-2 text-sm text-[#6B5446]"></div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section
           class="content-section border-t border-[#6B5446]/25"
           id="media"
           aria-labelledby="media-title"
@@ -906,5 +1093,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="assets/js/plugins.js" defer></script>
+    <script src="assets/js/widget.js" defer></script>
   </body>
 </html>
