@@ -19,13 +19,10 @@
     !weightSelect ||
     !quantityInput ||
     !grindSelect ||
-    !aromaCheckbox ||
-    !giftCheckbox ||
     !summary ||
     !totalPrice ||
     !breakdown ||
-    !quantityError ||
-    roastInputs.length === 0
+    !quantityError
   ) {
     return;
   }
@@ -114,7 +111,7 @@
       ? weightSelect.selectedOptions[0]
       : null;
 
-    if (!roastLabel || !selectedGrind || !selectedWeight) {
+    if (!selectedGrind || !selectedWeight) {
       totalPrice.textContent = "—";
       breakdown.textContent = "";
       return;
@@ -123,8 +120,11 @@
     const unitPrice = PRICE_BY_WEIGHT[weight];
     const packsTotal = unitPrice * quantity;
     const aromaSelected =
-      aromaCheckbox.isConnected && aromaCheckbox.checked;
-    const giftSelected = giftCheckbox.isConnected && giftCheckbox.checked;
+      aromaCheckbox &&
+      aromaCheckbox.isConnected &&
+      aromaCheckbox.checked;
+    const giftSelected =
+      giftCheckbox && giftCheckbox.isConnected && giftCheckbox.checked;
     const aromaTotal = aromaSelected ? 30 * quantity : 0;
     const giftTotal = giftSelected ? 50 : 0;
     const total = packsTotal + aromaTotal + giftTotal;
@@ -142,14 +142,14 @@
 
     clearQuantityError();
     const weightLabel = selectedWeight.textContent.trim();
-    summary.textContent =
-      weightLabel +
-      " · " +
-      roastLabel +
-      " · " +
-      selectedGrind.textContent.trim() +
-      " · ×" +
-      quantity;
+    summary.textContent = [
+      weightLabel,
+      roastLabel,
+      selectedGrind.textContent.trim(),
+      "×" + quantity,
+    ]
+      .filter(Boolean)
+      .join(" · ");
     totalPrice.textContent = displayCurrency(total);
     breakdown.textContent = "";
     appendBreakdownRow(
@@ -164,8 +164,12 @@
   quantityInput.addEventListener("change", updateSummary);
   weightSelect.addEventListener("change", updateSummary);
   grindSelect.addEventListener("change", updateSummary);
-  aromaCheckbox.addEventListener("change", updateSummary);
-  giftCheckbox.addEventListener("change", updateSummary);
+  if (aromaCheckbox) {
+    aromaCheckbox.addEventListener("change", updateSummary);
+  }
+  if (giftCheckbox) {
+    giftCheckbox.addEventListener("change", updateSummary);
+  }
   roastInputs.forEach(function (roastInput) {
     roastInput.addEventListener("change", updateSummary);
   });
