@@ -261,75 +261,92 @@
           <div class="mixer-copy">
             <p class="eyebrow">Твій рецепт</p>
             <h2 id="mixer-title">Створи свій мікс за 5 хвилин</h2>
-            <p>
-              Налаштуй основу свого рецепта. Цей конструктор — попередній
-              перегляд; оформлення замовлення з’явиться незабаром.
-            </p>
+            <p>Налаштуй основу свого рецепта.</p>
             <div class="mixer-form">
               <div class="slider-field">
-                <label for="blend">Співвідношення зерен</label>
+                <label for="arabica-range">
+                  Арабіка <span id="arabica-percent">70%</span>
+                </label>
                 <input
-                  id="blend"
-                  name="blend"
+                  id="arabica-range"
+                  name="arabica"
                   type="range"
                   min="0"
                   max="100"
-                  value="50"
+                  step="5"
+                  value="70"
+                  aria-valuetext="Арабіка 70 відсотків"
                   class="min-h-[44px] cursor-pointer"
                 />
+                <p id="arabica-price-gram" class="text-sm text-[#6B5446]">
+                  Арабіка: 1,00 грн за 1 грам
+                </p>
               </div>
               <div class="slider-field">
-                <label for="roast">Ступінь обсмаження</label>
+                <label for="robusta-range">
+                  Робуста <span id="robusta-percent">30%</span>
+                </label>
                 <input
-                  id="roast"
-                  name="roast"
+                  id="robusta-range"
+                  name="robusta"
                   type="range"
-                  min="1"
-                  max="5"
-                  value="3"
+                  min="0"
+                  max="100"
+                  step="5"
+                  value="30"
+                  aria-valuetext="Робуста 30 відсотків"
                   class="min-h-[44px] cursor-pointer"
                 />
+                <p id="robusta-price-gram" class="text-sm text-[#6B5446]">
+                  Робуста: 0,60 грн за 1 грам
+                </p>
               </div>
-              <div class="slider-field">
-                <label for="packaging">Дизайн пакування</label>
-                <input
-                  id="packaging"
-                  name="packaging"
-                  type="range"
-                  min="1"
-                  max="3"
-                  value="2"
-                  class="min-h-[44px] cursor-pointer"
-                />
-              </div>
-              <fieldset
-                id="subscription"
-                class="flex min-w-0 flex-wrap gap-3 border-0 p-0"
-              >
-                <legend class="field-title mb-2">Формат замовлення</legend>
+              <fieldset class="flex min-w-0 flex-wrap gap-3 border-0 p-0">
+                <legend class="field-title mb-2">Маса пачки</legend>
                 <label
                   class="flavor-tag min-h-[44px] !rounded-full cursor-pointer"
                 >
                   <input
                     type="radio"
-                    name="purchase-type"
-                    value="once"
+                    name="mix-mass"
+                    value="250"
                     checked
+                    class="size-5 shrink-0 accent-[#8F4F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12]"
                   />
-                  Разове замовлення
+                  250 грам
                 </label>
                 <label
                   class="flavor-tag min-h-[44px] !rounded-full cursor-pointer"
                 >
                   <input
                     type="radio"
-                    name="purchase-type"
-                    value="subscription"
+                    name="mix-mass"
+                    value="500"
+                    class="size-5 shrink-0 accent-[#8F4F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12]"
                   />
-                  Підписка
+                  500 грам
+                </label>
+                <label
+                  class="flavor-tag min-h-[44px] !rounded-full cursor-pointer"
+                >
+                  <input
+                    type="radio"
+                    name="mix-mass"
+                    value="1000"
+                    class="size-5 shrink-0 accent-[#8F4F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12]"
+                  />
+                  1000 грам
                 </label>
               </fieldset>
-              <a class="button" href="#contact">Написати нам</a>
+              <button
+                type="button"
+                id="mix-order"
+                class="button disabled:cursor-not-allowed disabled:opacity-50"
+                aria-disabled="true"
+                disabled
+              >
+                Перейти до оформлення
+              </button>
             </div>
           </div>
           <div class="mixer-image-wrap">
@@ -357,118 +374,128 @@
           <div class="swiper mixes-swiper min-w-0">
             <div class="swiper-wrapper">
               <div class="swiper-slide h-auto">
-            <article
-              class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
-            >
-              <p class="eyebrow">Готовий мікс</p>
-              <h3 class="text-2xl">Ранковий удар</h3>
-              <p class="text-sm text-[#6B5446]">
-                Насичений мікс з нотами шоколаду та горіхів.
-              </p>
-              <p class="text-sm text-[#6B5446]">250 г · Середнє обсмаження</p>
-              <p class="text-sm font-bold">250 грн</p>
-              <a
-                class="button mt-auto"
-                href="#mixer"
-                aria-label="Зібрати схожий мікс: Ранковий удар"
-                >Зібрати схожий мікс</a
-              >
-            </article>
+                <article
+                  class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
+                >
+                  <p class="eyebrow">Готовий мікс</p>
+                  <h3 class="text-2xl">Ранковий удар</h3>
+                  <p class="text-sm text-[#6B5446]">
+                    Насичений мікс з нотами шоколаду та горіхів.
+                  </p>
+                  <p class="text-sm text-[#6B5446]">
+                    250 г · Середнє обсмаження
+                  </p>
+                  <p class="text-sm font-bold">250 грн</p>
+                  <a
+                    class="button mt-auto"
+                    href="#mixer"
+                    aria-label="Зібрати схожий мікс: Ранковий удар"
+                    >Зібрати схожий мікс</a
+                  >
+                </article>
               </div>
               <div class="swiper-slide h-auto">
-            <article
-              class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
-            >
-              <p class="eyebrow">Готовий мікс</p>
-              <h3 class="text-2xl">Вечірній спокій</h3>
-              <p class="text-sm text-[#6B5446]">
-                М'який збалансований мікс з нотами карамелі.
-              </p>
-              <p class="text-sm text-[#6B5446]">250 г · Помірне обсмаження</p>
-              <p class="text-sm font-bold">260 грн</p>
-              <a
-                class="button mt-auto"
-                href="#mixer"
-                aria-label="Зібрати схожий мікс: Вечірній спокій"
-                >Зібрати схожий мікс</a
-              >
-            </article>
+                <article
+                  class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
+                >
+                  <p class="eyebrow">Готовий мікс</p>
+                  <h3 class="text-2xl">Вечірній спокій</h3>
+                  <p class="text-sm text-[#6B5446]">
+                    М'який збалансований мікс з нотами карамелі.
+                  </p>
+                  <p class="text-sm text-[#6B5446]">
+                    250 г · Помірне обсмаження
+                  </p>
+                  <p class="text-sm font-bold">260 грн</p>
+                  <a
+                    class="button mt-auto"
+                    href="#mixer"
+                    aria-label="Зібрати схожий мікс: Вечірній спокій"
+                    >Зібрати схожий мікс</a
+                  >
+                </article>
               </div>
               <div class="swiper-slide h-auto">
-            <article
-              class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
-            >
-              <p class="eyebrow">Готовий мікс</p>
-              <h3 class="text-2xl">Цитрусовий сад</h3>
-              <p class="text-sm text-[#6B5446]">
-                Світлий мікс зі свіжою кислинкою цитрусових.
-              </p>
-              <p class="text-sm text-[#6B5446]">250 г · Світле обсмаження</p>
-              <p class="text-sm font-bold">270 грн</p>
-              <a
-                class="button mt-auto"
-                href="#mixer"
-                aria-label="Зібрати схожий мікс: Цитрусовий сад"
-                >Зібрати схожий мікс</a
-              >
-            </article>
+                <article
+                  class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
+                >
+                  <p class="eyebrow">Готовий мікс</p>
+                  <h3 class="text-2xl">Цитрусовий сад</h3>
+                  <p class="text-sm text-[#6B5446]">
+                    Світлий мікс зі свіжою кислинкою цитрусових.
+                  </p>
+                  <p class="text-sm text-[#6B5446]">
+                    250 г · Світле обсмаження
+                  </p>
+                  <p class="text-sm font-bold">270 грн</p>
+                  <a
+                    class="button mt-auto"
+                    href="#mixer"
+                    aria-label="Зібрати схожий мікс: Цитрусовий сад"
+                    >Зібрати схожий мікс</a
+                  >
+                </article>
               </div>
               <div class="swiper-slide h-auto">
-            <article
-              class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
-            >
-              <p class="eyebrow">Готовий мікс</p>
-              <h3 class="text-2xl">Лісова ягода</h3>
-              <p class="text-sm text-[#6B5446]">
-                Фруктовий мікс з ягідною солодкістю.
-              </p>
-              <p class="text-sm text-[#6B5446]">250 г · Світле обсмаження</p>
-              <p class="text-sm font-bold">280 грн</p>
-              <a
-                class="button mt-auto"
-                href="#mixer"
-                aria-label="Зібрати схожий мікс: Лісова ягода"
-                >Зібрати схожий мікс</a
-              >
-            </article>
+                <article
+                  class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
+                >
+                  <p class="eyebrow">Готовий мікс</p>
+                  <h3 class="text-2xl">Лісова ягода</h3>
+                  <p class="text-sm text-[#6B5446]">
+                    Фруктовий мікс з ягідною солодкістю.
+                  </p>
+                  <p class="text-sm text-[#6B5446]">
+                    250 г · Світле обсмаження
+                  </p>
+                  <p class="text-sm font-bold">280 грн</p>
+                  <a
+                    class="button mt-auto"
+                    href="#mixer"
+                    aria-label="Зібрати схожий мікс: Лісова ягода"
+                    >Зібрати схожий мікс</a
+                  >
+                </article>
               </div>
               <div class="swiper-slide h-auto">
-            <article
-              class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
-            >
-              <p class="eyebrow">Готовий мікс</p>
-              <h3 class="text-2xl">Горіхова карамель</h3>
-              <p class="text-sm text-[#6B5446]">
-                Солодкий мікс з горіховим післясмаком.
-              </p>
-              <p class="text-sm text-[#6B5446]">250 г · Середнє обсмаження</p>
-              <p class="text-sm font-bold">255 грн</p>
-              <a
-                class="button mt-auto"
-                href="#mixer"
-                aria-label="Зібрати схожий мікс: Горіхова карамель"
-                >Зібрати схожий мікс</a
-              >
-            </article>
+                <article
+                  class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
+                >
+                  <p class="eyebrow">Готовий мікс</p>
+                  <h3 class="text-2xl">Горіхова карамель</h3>
+                  <p class="text-sm text-[#6B5446]">
+                    Солодкий мікс з горіховим післясмаком.
+                  </p>
+                  <p class="text-sm text-[#6B5446]">
+                    250 г · Середнє обсмаження
+                  </p>
+                  <p class="text-sm font-bold">255 грн</p>
+                  <a
+                    class="button mt-auto"
+                    href="#mixer"
+                    aria-label="Зібрати схожий мікс: Горіхова карамель"
+                    >Зібрати схожий мікс</a
+                  >
+                </article>
               </div>
               <div class="swiper-slide h-auto">
-            <article
-              class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
-            >
-              <p class="eyebrow">Готовий мікс</p>
-              <h3 class="text-2xl">Темний шоколад</h3>
-              <p class="text-sm text-[#6B5446]">
-                Глибокий мікс з нотами гіркого шоколаду.
-              </p>
-              <p class="text-sm text-[#6B5446]">250 г · Темне обсмаження</p>
-              <p class="text-sm font-bold">265 грн</p>
-              <a
-                class="button mt-auto"
-                href="#mixer"
-                aria-label="Зібрати схожий мікс: Темний шоколад"
-                >Зібрати схожий мікс</a
-              >
-            </article>
+                <article
+                  class="flex h-full flex-col gap-4 rounded-[20px] border border-[#6B5446]/25 bg-white p-6 shadow-[0_4px_16px_rgba(59,36,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_16px_rgba(200,117,43,0.3)]"
+                >
+                  <p class="eyebrow">Готовий мікс</p>
+                  <h3 class="text-2xl">Темний шоколад</h3>
+                  <p class="text-sm text-[#6B5446]">
+                    Глибокий мікс з нотами гіркого шоколаду.
+                  </p>
+                  <p class="text-sm text-[#6B5446]">250 г · Темне обсмаження</p>
+                  <p class="text-sm font-bold">265 грн</p>
+                  <a
+                    class="button mt-auto"
+                    href="#mixer"
+                    aria-label="Зібрати схожий мікс: Темний шоколад"
+                    >Зібрати схожий мікс</a
+                  >
+                </article>
               </div>
             </div>
           </div>
@@ -583,10 +610,12 @@
         >
           <header class="section-heading">
             <p class="eyebrow">Твій смак — твої правила</p>
-            <h2 id="mix-builder-title">Конструктор кавового міксу</h2>
+            <h2 id="mix-builder-title">Оформлення замовлення</h2>
           </header>
 
-          <div class="grid min-w-0 grid-cols-1 items-start gap-6 md:grid-cols-2">
+          <div
+            class="grid min-w-0 grid-cols-1 items-start gap-6 md:grid-cols-2"
+          >
             <div
               class="grid min-w-0 gap-5 rounded-[20px] border border-[#6B5446]/25 bg-white p-5 shadow-lg sm:p-6"
             >
@@ -595,16 +624,16 @@
                   <label
                     for="coffee-weight"
                     class="flex min-h-[44px] items-center text-sm font-semibold text-[#3B2416]"
-                    >Вага пачки</label
+                    >Маса пачки</label
                   >
                   <select
                     id="coffee-weight"
                     name="coffee-weight"
                     class="min-h-[44px] w-full min-w-0 rounded-xl border border-[#6B5446] bg-white px-3 py-2 text-[#3B2416] transition duration-200 hover:border-[#8F4F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8F4F12]"
                   >
-                    <option value="250">250 г</option>
-                    <option value="500">500 г</option>
-                    <option value="1000">1000 г</option>
+                    <option value="250">250 грам</option>
+                    <option value="500">500 грам</option>
+                    <option value="1000">1000 грам</option>
                   </select>
                 </div>
 
@@ -745,7 +774,7 @@
             >
               <p
                 id="summary"
-                class="border-b border-[#6B5446]/25 pb-4 text-base font-semibold text-[#3B2416]"
+                class="break-words border-b border-[#6B5446]/25 pb-4 text-base font-semibold text-[#3B2416]"
               >
                 Підсумок замовлення
               </p>
@@ -759,8 +788,20 @@
                 <h3 class="mb-3 text-sm font-semibold text-[#3B2416]">
                   Розбивка вартості
                 </h3>
-                <div id="breakdown" class="grid gap-2 text-sm text-[#6B5446]"></div>
+                <div
+                  id="breakdown"
+                  class="grid gap-2 text-sm text-[#6B5446]"
+                ></div>
               </div>
+              <button
+                type="button"
+                id="order-mix"
+                class="button min-h-[44px] disabled:cursor-not-allowed disabled:opacity-50"
+                aria-disabled="true"
+                disabled
+              >
+                Замовити цей мікс
+              </button>
             </aside>
           </div>
         </section>
@@ -1096,5 +1137,6 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="assets/js/plugins.js" defer></script>
     <script src="assets/js/widget.js" defer></script>
+    <script src="assets/js/mix.js" defer></script>
   </body>
 </html>
