@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zerno-mix.vercel.app/sitemap.xml
