@@ -2,11 +2,15 @@ new Swiper(".mixes-swiper", {
   loop: true,
   spaceBetween: 24,
   slidesPerView: 1,
-  autoplay: {
-    delay: 3500,
-    pauseOnMouseEnter: true,
-    disableOnInteraction: false,
-  },
+  autoplay:
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ? false
+      : {
+          delay: 3500,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+        },
   pagination: {
     el: ".mixes-pagination",
     clickable: true,
@@ -18,6 +22,7 @@ new Swiper(".mixes-swiper", {
   a11y: {
     prevSlideMessage: "Попередній мікс",
     nextSlideMessage: "Наступний мікс",
+    paginationBulletMessage: "Перейти до слайда {{index}}",
   },
   breakpoints: {
     768: {

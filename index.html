@@ -7,7 +7,17 @@
       name="description"
       content="Створи власний кавовий мікс у Zerno.Mix: обирай пропорції, обсмаження та пакування."
     />
+    <link rel="canonical" href="https://zerno-mix.vercel.app/" />
+    <meta property="og:title" content="Zerno.Mix — створи свій кавовий мікс" />
+    <meta
+      property="og:description"
+      content="Створи власний кавовий мікс у Zerno.Mix: обирай пропорції, обсмаження та пакування."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://zerno-mix.vercel.app/" />
+    <meta property="og:locale" content="uk_UA" />
     <title>Zerno.Mix — створи свій кавовий мікс</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,7 +32,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -176,7 +186,7 @@
             <picture>
               <source srcset="assets/images/hero_bg.webp" type="image/webp" />
               <img
-                src="assets/images/hero_bg.png"
+                src="assets/images/hero_bg.webp"
                 alt="Кавові зерна для створення власного міксу"
                 width="1820"
                 height="1024"
@@ -204,7 +214,7 @@
           <div class="benefit-grid">
             <article class="benefit-card">
               <img
-                src="assets/icons/icon-personalization.svg"
+                src="assets/icons/icon-personalization.png"
                 alt=""
                 aria-hidden="true"
                 width="48"
@@ -216,7 +226,7 @@
             </article>
             <article class="benefit-card">
               <img
-                src="assets/icons/icon-origin.svg"
+                src="assets/icons/icon-origin.png"
                 alt=""
                 aria-hidden="true"
                 width="48"
@@ -228,7 +238,7 @@
             </article>
             <article class="benefit-card">
               <img
-                src="assets/icons/icon-subscription.svg"
+                src="assets/icons/icon-subscription.png"
                 alt=""
                 aria-hidden="true"
                 width="48"
@@ -240,7 +250,7 @@
             </article>
             <article class="benefit-card">
               <img
-                src="assets/icons/icon-eco.svg"
+                src="assets/icons/icon-eco.png"
                 alt=""
                 aria-hidden="true"
                 width="48"
@@ -353,7 +363,7 @@
             <img
               class="mixer-image"
               loading="lazy"
-              src="assets/images/hero_bg.png"
+              src="assets/images/hero_bg.webp"
               alt="Кавові зерна для створення власного міксу"
               width="1820"
               height="1024"
@@ -388,9 +398,9 @@
                   <p class="text-sm font-bold">250 грн</p>
                   <a
                     class="button mt-auto"
-                    href="#mixer"
-                    aria-label="Зібрати схожий мікс: Ранковий удар"
-                    >Зібрати схожий мікс</a
+                    href="#feedbackForm"
+                    aria-label="Замовити готовий мікс: Ранковий удар"
+                    >Замовити</a
                   >
                 </article>
               </div>
@@ -409,9 +419,9 @@
                   <p class="text-sm font-bold">260 грн</p>
                   <a
                     class="button mt-auto"
-                    href="#mixer"
-                    aria-label="Зібрати схожий мікс: Вечірній спокій"
-                    >Зібрати схожий мікс</a
+                    href="#feedbackForm"
+                    aria-label="Замовити готовий мікс: Вечірній спокій"
+                    >Замовити</a
                   >
                 </article>
               </div>
@@ -430,9 +440,9 @@
                   <p class="text-sm font-bold">270 грн</p>
                   <a
                     class="button mt-auto"
-                    href="#mixer"
-                    aria-label="Зібрати схожий мікс: Цитрусовий сад"
-                    >Зібрати схожий мікс</a
+                    href="#feedbackForm"
+                    aria-label="Замовити готовий мікс: Цитрусовий сад"
+                    >Замовити</a
                   >
                 </article>
               </div>
@@ -451,9 +461,9 @@
                   <p class="text-sm font-bold">280 грн</p>
                   <a
                     class="button mt-auto"
-                    href="#mixer"
-                    aria-label="Зібрати схожий мікс: Лісова ягода"
-                    >Зібрати схожий мікс</a
+                    href="#feedbackForm"
+                    aria-label="Замовити готовий мікс: Лісова ягода"
+                    >Замовити</a
                   >
                 </article>
               </div>
@@ -472,9 +482,9 @@
                   <p class="text-sm font-bold">255 грн</p>
                   <a
                     class="button mt-auto"
-                    href="#mixer"
-                    aria-label="Зібрати схожий мікс: Горіхова карамель"
-                    >Зібрати схожий мікс</a
+                    href="#feedbackForm"
+                    aria-label="Замовити готовий мікс: Горіхова карамель"
+                    >Замовити</a
                   >
                 </article>
               </div>
@@ -491,9 +501,9 @@
                   <p class="text-sm font-bold">265 грн</p>
                   <a
                     class="button mt-auto"
-                    href="#mixer"
-                    aria-label="Зібрати схожий мікс: Темний шоколад"
-                    >Зібрати схожий мікс</a
+                    href="#feedbackForm"
+                    aria-label="Замовити готовий мікс: Темний шоколад"
+                    >Замовити</a
                   >
                 </article>
               </div>
@@ -1132,11 +1142,12 @@
       </div>
     </div>
     <script src="assets/js/validation.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
     <script src="assets/js/plugins.js" defer></script>
     <script src="assets/js/widget.js" defer></script>
     <script src="assets/js/mix.js" defer></script>
+    <script src="assets/js/ready-mixes.js" defer></script>
   </body>
 </html>
